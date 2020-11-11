@@ -12,9 +12,9 @@ else
 endif
 
 EOT
-	cat makefile >> .makefile
-
+	if [ -f "makefile" ]; then
+		cat makefile >> .makefile
+	fi
 	/usr/bin/make -f .makefile $@
-
 	rm .makefile
 fi
